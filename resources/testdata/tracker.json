@@ -1,0 +1,1660 @@
+{
+  "stories": {
+    "stories": [
+      {
+        "kind": "story",
+        "id": 165068541,
+        "created_at": "2019-04-02T18:33:36Z",
+        "updated_at": "2019-04-15T19:51:44Z",
+        "estimate": 1,
+        "story_type": "feature",
+        "name": "cloudfoundry/stack-auditor #6: Feature Request: optionally show the current buildpacks",
+        "description": "[Github Issue #6](https://github.com/cloudfoundry/stack-auditor/issues/6)\n\n>when upgrading to the latest stack its easy to see that some apps will be able to go easier than others. a lot of this can be determined by knowing the build pack. if the `audit-stack` command had an option to also show the buildpack of each application we could easily begin to identify low hanging fruit (like nginx buildpacks) and others that will require more research and consideration (buildpack is a git url) \n\nFiled by [@danlangford](http://github.com/danlangford)\n\n**Notes**\n\nCan output for audit stack look like the following:\n\n`cf audit-stack`\n\noutput:\n\n```\napp                                        stack                    buildpack\npivotal/v0fnegtf/php_all                   cflinuxfs2               php\npivotal/v0fnegtf/php_app                   cflinuxfs2               php\n\n```",
+        "current_state": "unstarted",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/165068541",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 20885673,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "stack-auditor",
+            "created_at": "2019-01-11T20:53:17Z",
+            "updated_at": "2019-01-11T20:53:17Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 165296435,
+        "created_at": "2019-04-11T20:14:41Z",
+        "updated_at": "2019-05-06T19:05:56Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/ruby-buildpack #112: NOTICE: [ruby-buildpack] End of support for Ruby versions 2.2.x and 2.3.x after May 11, 2019",
+        "description": "[Github Issue #112](https://github.com/cloudfoundry/ruby-buildpack/issues/112)\n\n>The first release of the Ruby buildpack after May 11, 2019 will no longer include any versions of Ruby 2.2.x and 2.3.x. These Ruby versions are no longer supported upstream [1]. Please migrate your Ruby apps to supported versions of Ruby before that time. \n>\n>Note: Unless you are manually specifying a version of Ruby for the buildpack to use, or you have customized your Ruby buildpack, no action is required.\n>\n>[ ...(message has been trimmed)\n\nFiled by [@shanks3012](http://github.com/shanks3012)",
+        "current_state": "unstarted",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/165296435",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 165453016,
+        "created_at": "2019-04-18T18:15:35Z",
+        "updated_at": "2019-05-06T19:06:31Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/go-buildpack #77: Notice: End of support for Go versions 1.10.x after 2019-05-18",
+        "description": "[Github Issue #77](https://github.com/cloudfoundry/go-buildpack/issues/77)\n\n>The first release of the Go buildpack after May 18, 2019 will no longer include any versions of Go 1.10.x. These Go versions are no longer supported upstream [1]. Please migrate your Go apps to supported versions of Go before that time. \n>\n>Note: Unless you are manually specifying a version of Go for the buildpack to use, or you have customized your Go buildpack, no action is required.\n>\n>[1] https://golang.org/doc/d ...(message has been trimmed)\n\nFiled by [@shanks3012](http://github.com/shanks3012)",
+        "current_state": "unstarted",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/165453016",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 164991430,
+        "created_at": "2019-03-29T17:08:46Z",
+        "updated_at": "2019-04-26T15:13:02Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/npm-cnb #8: Detection outputs log messages and should be silent",
+        "description": "[Github Issue #8](https://github.com/cloudfoundry/npm-cnb/issues/8)\n\n>Currently the npm buildpack prints output to stdout:\n>\n>```plain\n>[detector] Trying group of 5...\n>[detector] ======== Output: NPM Buildpack ========\n>[detector] no \"package.json\" found at: /workspace/app/package.json\n>[detector] ======== Results ========\n>[detector] Node.js Buildpack: pass\n>[detector] Python Buildpack: pass\n>[detector] NPM Buildpack: fail\n>[detector] Node Function Buildpack: fail\n>[detector] ...(message has been trimmed)\n\nFiled by [@nebhale](http://github.com/nebhale)\n\n**Notes** \n- If this is in makecnb template as a log message, we should remove it. Check and see",
+        "current_state": "unstarted",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/164991430",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 21071429,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "npm-cnb",
+            "created_at": "2019-03-05T14:46:51Z",
+            "updated_at": "2019-03-05T14:46:51Z"
+          },
+          {
+            "id": 19159387,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "ready",
+            "created_at": "2017-09-21T16:05:35Z",
+            "updated_at": "2017-09-21T16:05:35Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          },
+          {
+            "id": 20449596,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "v3",
+            "created_at": "2018-09-05T15:35:48Z",
+            "updated_at": "2018-09-05T15:35:48Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 165910951,
+        "created_at": "2019-05-09T13:55:37Z",
+        "updated_at": "2019-05-10T21:33:34Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/go-mod-cnb #4: Source code should not be included in run container",
+        "description": "[Github Issue #4](https://github.com/cloudfoundry/go-mod-cnb/issues/4)\n\n>### What version of Cloud Foundry and CF CLI are you using? (i.e. What is the output of \n>\n>running `cf curl /v2/info && cf version`?\n>`pack cli v0.1.0 (git sha: e1793ab9fc3d172a416183ef3df20daf089eba19)`\n>\n>### What version of the buildpack you are using?\n>`v0.2.0`\n>\n>### If you were attempting to accomplish a task, what was it you were attempting to do?\n>\n>N/A\n>\n>### What did you expect to happen?\n>\n>Source ...(message has been trimmed)\n\nFiled by [@cmccarthy101](http://github.com/cmccarthy101)",
+        "current_state": "unstarted",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/165910951",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 165901606,
+        "created_at": "2019-05-09T04:04:04Z",
+        "updated_at": "2019-05-13T17:18:24Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/nodejs-buildpack #190: Middleware compression doesn't work when push to cloud foundry",
+        "description": "[Github Issue #190](https://github.com/cloudfoundry/nodejs-buildpack/issues/190)\n\n>What version of Cloud Foundry and CF CLI are you using? (i.e. What is the output of running `cf curl /v2/info && cf version`?\n>cf curl /v2/info\n>`\"name\": \"IBM Cloud\",\n>   \"build\": \"6.8.0\",\n>   \"support\": \"http://ibm.biz/bluemix-supportinfo\",\n>   \"version\": 0,\n>   \"description\": \"IBM Bluemix\",`\n>\n>cf version\n>cf.exe version 6.40.1+85d04488a.2018-10-31\n>\n>What version of the buildpack you are using?\n>\n>I ...(message has been trimmed)\n\nFiled by [@DarknessZX](http://github.com/DarknessZX)",
+        "current_state": "unstarted",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/165901606",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 8675136,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "new-activity",
+            "created_at": "2014-06-12T22:53:23Z",
+            "updated_at": "2014-06-12T22:53:23Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 165953931,
+        "created_at": "2019-05-11T17:24:20Z",
+        "updated_at": "2019-05-13T15:53:28Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/php-buildpack #306: Laravel view cache",
+        "description": "[Github Issue #306](https://github.com/cloudfoundry/php-buildpack/issues/306)\n\n>#### What version of Cloud Foundry and CF CLI are you using? (i.e. What is the output of running `cf curl /v2/info && cf version`?\n>- 6.8.0\n>- 6.40.1+85d04488a.2018-10-31\n>\n>\n>#### What version of the buildpack you are using?\n>- v4.3.76\n>\n>\n>#### If you were attempting to accomplish a task, what was it you were attempting to do?\n>\n>```\n>\"scripts\": {\n>        \"post-autoload-dump\": [\n>            \"Illumina ...(message has been trimmed)\n\nFiled by [@bluemmb](http://github.com/bluemmb)",
+        "current_state": "unscheduled",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/165953931",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 8675136,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "new-activity",
+            "created_at": "2014-06-12T22:53:23Z",
+            "updated_at": "2014-06-12T22:53:23Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 165884664,
+        "created_at": "2019-05-08T13:54:55Z",
+        "updated_at": "2019-05-10T19:39:43Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/nginx-buildpack #17: Environment variables value escaped",
+        "description": "[Github Issue #17](https://github.com/cloudfoundry/nginx-buildpack/issues/17)\n\n>What version of Cloud Foundry and CF CLI are you using? (i.e. What is the output of running `cf curl /v2/info && cf version`?\n>\n>{\n>   \"name\": \"\",\n>   \"build\": \"\",\n>   \"version\": 0,\n>   \"min_cli_version\": \"6.42.0\",\n>   \"min_recommended_cli_version\": \"latest\",\n>   \"api_version\": \"2.128.0\",\n>   \"osbapi_version\": \"2.14\",\n>}\n>cf version 6.44.0+5de0f0d02.2019-05-01\n>\n>What version of the buildpack you are ...(message has been trimmed)\n\nFiled by [@oliveti](http://github.com/oliveti)",
+        "current_state": "unscheduled",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/165884664",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 165876248,
+        "created_at": "2019-05-08T06:05:41Z",
+        "updated_at": "2019-05-09T14:52:34Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/php-buildpack #305: curl not available in cli",
+        "description": "[Github Issue #305](https://github.com/cloudfoundry/php-buildpack/issues/305)\n\n>What version of Cloud Foundry and CF CLI are you using? (i.e. What is the output of running `cf curl /v2/info && cf version`?\n>\n>```\n>\"min_cli_version\": \"6.42.0\",\n>\"api_version\": \"2.128.0\",\n>\"osbapi_version\": \"2.14\"\n>```\n>\n>What version of the buildpack you are using?\n>\n>-------> Buildpack version 4.3.76\n>\n>If you were attempting to accomplish a task, what was it you were attempting to do?\n>\n>Running a ...(message has been trimmed)\n\nFiled by [@crypticro](http://github.com/crypticro)",
+        "current_state": "unscheduled",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/165876248",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 165853911,
+        "created_at": "2019-05-07T12:49:53Z",
+        "updated_at": "2019-05-07T15:55:28Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/apt-buildpack #21: fails with no internet access",
+        "description": "[Github Issue #21](https://github.com/cloudfoundry/apt-buildpack/issues/21)\n\n>This is an issue I saw after I had issues in https://github.com/cloudfoundry/apt-buildpack/issues/20.\n>\n>**What version of Cloud Foundry and CF CLI are you using? (i.e. What is the output of running cf curl /v2/info && cf version?** cf-cli: v6.43.0 and cf version: 2.3.8-build.6.\n>\n>**What version of the buildpack you are using?** v0.1.7\n>\n>**If you were attempting to accomplish a task, what was it you were ...(message has been trimmed)\n\nFiled by [@lrstanley](http://github.com/lrstanley)",
+        "current_state": "unscheduled",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/165853911",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 8675136,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "new-activity",
+            "created_at": "2014-06-12T22:53:23Z",
+            "updated_at": "2014-06-12T22:53:23Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 165612794,
+        "created_at": "2019-04-25T18:59:06Z",
+        "updated_at": "2019-05-06T18:28:13Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/dotnet-core-buildpack #210: .NET Core 3.0 Preview",
+        "description": "[Github Issue #210](https://github.com/cloudfoundry/dotnet-core-buildpack/issues/210)\n\n>Are there any plans to add support for the preview version of .NET Core 3.0?\n>\n\nFiled by [@Tandis5](http://github.com/Tandis5)",
+        "current_state": "unscheduled",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/165612794",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 14986421,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "reopened-in-github",
+            "created_at": "2016-06-01T16:48:15Z",
+            "updated_at": "2016-06-01T16:48:15Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 165481690,
+        "created_at": "2019-04-20T16:11:51Z",
+        "updated_at": "2019-04-29T18:02:42Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/staticfile-buildpack #155: Static builpback scores F on Mozilla Observatory",
+        "description": "[Github Issue #155](https://github.com/cloudfoundry/staticfile-buildpack/issues/155)\n\n>What version of Cloud Foundry and CF CLI are you using? (i.e. What is the output of running `cf curl /v2/info && cf version`?\n>{\n>   \"name\": \"\",\n>   \"build\": \"\",\n>   \"support\": \"https://support.run.pivotal.io\",\n>   \"version\": 0,\n>   \"description\": \"Cloud Foundry sponsored by Pivotal\",\n>   \"authorization_endpoint\": \"https://login.run.pivotal.io\",\n>   \"token_endpoint\": \"https://uaa.run.pivotal.io\",\n>   \" ...(message has been trimmed)\n\nFiled by [@s-toussaint](http://github.com/s-toussaint)\n\n**Notes**\n- Try to find what standards for headers might be and make it better",
+        "current_state": "unscheduled",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/165481690",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 165489449,
+        "created_at": "2019-04-22T06:43:49Z",
+        "updated_at": "2019-04-25T20:12:24Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/php-buildpack #301: unknow issue",
+        "description": "[Github Issue #301](https://github.com/cloudfoundry/php-buildpack/issues/301)\n\n>The deployment was working at a time suddenly i just see this error \n>` \n>[RuntimeException]                                                                                         \n>     Could not scan for classes inside \"htdocs/database/seeds\" which does not appear to be a file nor a folder \n>`\n>Then application stopped\n\nFiled by [@segunmicheal27](http://github.com/segunmicheal27)",
+        "current_state": "unscheduled",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/165489449",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 165388443,
+        "created_at": "2019-04-16T16:14:35Z",
+        "updated_at": "2019-04-26T16:28:31Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/python-buildpack #132: Python app failing with error \"Cloud foundry white list request\"",
+        "description": "[Github Issue #132](https://github.com/cloudfoundry/python-buildpack/issues/132)\n\n>@egmanoharan @jfeeny were you guys able to fix the issue ?\n>\n>Continuing on the existing issue https://github.com/cloudfoundry/python-buildpack/issues/109\n>\n>We are facing the same issue while pushing all the python apps.\n>\n>we are using cf version 6.38.0+7ddf0aadd.2018-08-07\n>\n>We are using the python-buildpack-v1.5.26.zip\n>\n>Staging app and tracing logs...\n>   Downloading python_buildpack...\n>   ...(message has been trimmed)\n\nFiled by [@nakultyagi28](http://github.com/nakultyagi28)",
+        "current_state": "unscheduled",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/165388443",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 165092470,
+        "created_at": "2019-04-03T15:37:23Z",
+        "updated_at": "2019-04-08T13:54:29Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/php-buildpack #298: GeoIP/GeoLite DB Support",
+        "description": "[Github Issue #298](https://github.com/cloudfoundry/php-buildpack/issues/298)\n\n>What version of the buildpack you are using? \n>v4.3.72\n>\n>The GeoLite legacy databases from MaxMind have been deprecated for a long time. On Jan 1, 2019, they were finally discontinued and are no longer supported.\n>\n>The PHP buildpack has support to help users automatically download the legacy DBs. This is now broken since they no longer exist.\n>\n>https://github.com/cloudfoundry/php-buildpack/blob/master/extens ...(message has been trimmed)\n\nFiled by [@dmikusa-pivotal](http://github.com/dmikusa-pivotal)",
+        "current_state": "unscheduled",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/165092470",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 165080517,
+        "created_at": "2019-04-03T07:34:28Z",
+        "updated_at": "2019-04-08T13:54:29Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/php-buildpack #297: stack missing",
+        "description": "[Github Issue #297](https://github.com/cloudfoundry/php-buildpack/issues/297)\n\n>when i run cf stacks i cannot find cflinuxfs3 according to the php7 we find out its cflinuxfs3 has php 7.3.3. So how can i upgrade stack\n\nFiled by [@segunmicheal27](http://github.com/segunmicheal27)",
+        "current_state": "unscheduled",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/165080517",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 165079382,
+        "created_at": "2019-04-03T06:02:44Z",
+        "updated_at": "2019-04-15T15:09:43Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/php-buildpack #296: missing extension",
+        "description": "[Github Issue #296](https://github.com/cloudfoundry/php-buildpack/issues/296)\n\n>I download php 7.2 with buildpack_url but some extension are mission like mbstring and many more, i will love have a great step by step good explanation how to add missing extension to php extension\n\nFiled by [@segunmicheal27](http://github.com/segunmicheal27)",
+        "current_state": "unscheduled",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/165079382",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 160319860,
+        "created_at": "2018-09-06T14:56:35Z",
+        "updated_at": "2019-04-04T18:26:44Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/staticfile-buildpack #103: Ability to add routes to the static buildpack like Heroku",
+        "description": "[Github Issue #103](https://github.com/cloudfoundry/staticfile-buildpack/issues/103)\n\n>What version of Cloud Foundry and CF CLI are you using? (i.e. What is the output of running `cf curl /v2/info && cf version`?\n>```\n>{\n>   \"name\": \"\",\n>   \"build\": \"\",\n>   \"support\": \"https://support.run.pivotal.io\",\n>   \"version\": 0,\n>   \"description\": \"Cloud Foundry sponsored by Pivotal\",\n>   \"authorization_endpoint\": \"https://login.run.pivotal.io\",\n>   \"token_endpoint\": \"https://uaa.run.pivotal.io\",\n ...(message has been trimmed)\n\nFiled by [@thecircularboard-engineering](http://github.com/thecircularboard-engineering)",
+        "current_state": "unscheduled",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/160319860",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 19159387,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "ready",
+            "created_at": "2017-09-21T16:05:35Z",
+            "updated_at": "2017-09-21T16:05:35Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 165888910,
+        "created_at": "2019-05-08T16:16:32Z",
+        "updated_at": "2019-05-10T21:42:54Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/go-mod-cnb #3: Private Repository Support",
+        "description": "[Github Issue #3](https://github.com/cloudfoundry/go-mod-cnb/issues/3)\n\n>Using master of go-mod-cnb\n>\n>### What version of the buildpack you are using?\n>\n>master branch\n>\n>### If you were attempting to accomplish a task, what was it you were attempting to do?\n>\n>Build source code using the go-mod-cnb buildpack where a module references code from a private git repo.\n>\n>### What did you expect to happen?\n>\n>I expected some input or method to provide credentials to the buildpack to ...(message has been trimmed)\n\nFiled by [@cmccarthy101](http://github.com/cmccarthy101)",
+        "current_state": "unscheduled",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/165888910",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 164280299,
+        "created_at": "2019-02-27T16:39:21Z",
+        "updated_at": "2019-04-04T18:35:12Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/apt-buildpack #18: cflinuxfs3 shows warning: rm: cannot remove '/var/cache/apt/archives/partial/*.deb': Permission denied",
+        "description": "[Github Issue #18](https://github.com/cloudfoundry/apt-buildpack/issues/18)\n\n>What version of Cloud Foundry and CF CLI are you using? (i.e. What is the output of running `cf curl /v2/info && cf version`?\n>\n>* PWS\n>* `cf version 6.43.0+815ea2f3d.2019-02-20`\n>\n>What version of the buildpack you are using?\n>\n>* latest on PWS - v1.5\n>\n>If you were attempting to accomplish a task, what was it you were attempting to do?\n>\n>* deploy to `cflinuxfs3` stack\n>\n>What did you expect to happen?\n> ...(message has been trimmed)\n\nFiled by [@drnic](http://github.com/drnic)",
+        "current_state": "unscheduled",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/164280299",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 19159387,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "ready",
+            "created_at": "2017-09-21T16:05:35Z",
+            "updated_at": "2017-09-21T16:05:35Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 158812800,
+        "created_at": "2018-07-04T01:18:47Z",
+        "updated_at": "2019-04-04T18:26:20Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/go-buildpack #66: Allow to build/run with race detector",
+        "description": "[Github Issue #66](https://github.com/cloudfoundry/go-buildpack/issues/66)\n\n>What version of Cloud Foundry and CF CLI are you using? (i.e. What is the output of running `cf curl /v2/info && cf version`?\n>\n>2.98.0, 6.37.0\n>\n>What version of the buildpack you are using?\n>\n>master\n>\n>If you were attempting to accomplish a task, what was it you were attempting to do?\n>\n>Run my go application with the race detector on\n>\n>What did you expect to happen?\n>\n>The application runs with the ...(message has been trimmed)\n\nFiled by [@CAFxX](http://github.com/CAFxX)",
+        "current_state": "unscheduled",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/158812800",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 19159387,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "ready",
+            "created_at": "2017-09-21T16:05:35Z",
+            "updated_at": "2017-09-21T16:05:35Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 160900261,
+        "created_at": "2018-10-01T17:19:25Z",
+        "updated_at": "2019-04-04T18:30:49Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/staticfile-buildpack #137: Trailing slash redirect doesn't respect protocol",
+        "description": "[Github Issue #137](https://github.com/cloudfoundry/staticfile-buildpack/issues/137)\n\n>*What version of the buildpack you are using?*\n>1.4.13\n>\n>*What was it you were attempting to do?*\n>Navigate to a path like `https://example.com/something` which corresponds to a folder.\n>\n>*What did you expect to happen?*\n>The browser would be redirected to `https://example.com/something/` (trailing slash)\n>\n>*What was the actual behavior?*\n>The browser is redirected to `http://example.com/something/ ...(message has been trimmed)\n\nFiled by [@TuckerWhitehouse](http://github.com/TuckerWhitehouse)",
+        "current_state": "unscheduled",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/160900261",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 19159387,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "ready",
+            "created_at": "2017-09-21T16:05:35Z",
+            "updated_at": "2017-09-21T16:05:35Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 160957433,
+        "created_at": "2018-10-03T14:02:05Z",
+        "updated_at": "2019-04-25T20:50:36Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/python-buildpack #118: pip version ",
+        "description": "[Github Issue #118](https://github.com/cloudfoundry/python-buildpack/issues/118)\n\n>For python2.7 \n>I can't deploy my app with  9.0.3, \n>is there any way to upgrade pip version ? \n\nFiled by [@NadaFEKI](http://github.com/NadaFEKI)",
+        "current_state": "unscheduled",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/160957433",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 19159387,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "ready",
+            "created_at": "2017-09-21T16:05:35Z",
+            "updated_at": "2017-09-21T16:05:35Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 163646135,
+        "created_at": "2019-02-01T08:12:19Z",
+        "updated_at": "2019-04-04T18:35:18Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/apt-buildpack #16: Minor (non breaking) build errors during push",
+        "description": "[Github Issue #16](https://github.com/cloudfoundry/apt-buildpack/issues/16)\n\n>**Note that the application is pushed successfully and works fine.**\n>\n>What version of Cloud Foundry and CF CLI are you using?\n>`cf curl /v2/info`\n>```\n>{\n>   \"name\": \"\",\n>   \"build\": \"\",\n>   \"support\": \"\",\n>   \"version\": 0,\n>   \"description\": \"Cloud Foundry at Foobar\",\n>   \"authorization_endpoint\": \"https://login.cf.foobar.com\",\n>   \"token_endpoint\": \"https://uaa.cf.foobar.com\",\n>   \"min_cli_version\": ...(message has been trimmed)\n\nFiled by [@konstantinblaesi](http://github.com/konstantinblaesi)",
+        "current_state": "unscheduled",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/163646135",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 19159387,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "ready",
+            "created_at": "2017-09-21T16:05:35Z",
+            "updated_at": "2017-09-21T16:05:35Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 164871515,
+        "created_at": "2019-03-25T16:15:58Z",
+        "updated_at": "2019-04-26T15:11:57Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/nodejs-buildpack #186: Issues with node-pre-gyp",
+        "description": "[Github Issue #186](https://github.com/cloudfoundry/nodejs-buildpack/issues/186)\n\n>Starting version v1.6.46 we noticed that node-pre-gyp is missing in the buildpack. A dependency NPM package \"canvas\" that requires the package now fails with the following error:\n>\n>```\n>error /tmp/app/node_modules/canvas: Command failed.\n>   Exit code: 127\n>   Command: node-pre-gyp install --fallback-to-build\n>   Arguments: \n>   Directory: /tmp/app/node_modules/canvas\n>   Output:\n>   /bin/sh: 1: node-pre- ...(message has been trimmed)\n\nFiled by [@onebesky](http://github.com/onebesky)",
+        "current_state": "unscheduled",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/164871515",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 164702454,
+        "created_at": "2019-03-18T15:49:40Z",
+        "updated_at": "2019-04-26T15:12:10Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/binary-builder #47: Building PHP 7.2.16 - libargon not found",
+        "description": "[Github Issue #47](https://github.com/cloudfoundry/binary-builder/issues/47)\n\n>I have tried to re-run the building script for PHP with oracle support for the new cflinuxfs3.\n>\n>The compilation of php 7.2.16 works fine but when deploying the app using that custom buildpack it fails:\n>\n>```\n> /tmp/app/php/bin/php: error while loading shared libraries: libargon2.so.1: cannot open shared object file: No such file or directory\n>   Traceback (most recent call last):\n>     File \"/tmp/buildpackdow ...(message has been trimmed)\n\nFiled by [@crypticro](http://github.com/crypticro)",
+        "current_state": "unscheduled",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/164702454",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 164635786,
+        "created_at": "2019-03-14T15:05:46Z",
+        "updated_at": "2019-04-26T15:12:21Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/apt-buildpack #19: No error, but no package installed",
+        "description": "[Github Issue #19](https://github.com/cloudfoundry/apt-buildpack/issues/19)\n\n>What version of Cloud Foundry and CF CLI are you using? (i.e. What is the output of running `cf curl /v2/info && cf version`?\n>\n>- cf version 6.38.0+7ddf0aadd.2018-08-07\n>\n>What version of the buildpack you are using?\n>\n>- latest\n>\n>If you were attempting to accomplish a task, what was it you were attempting to do?\n>\n>- Installing the smbclient package\n>\n>**apt.yml**\n>```\n>---\n>packages:\n>  - smbclient\n ...(message has been trimmed)\n\nFiled by [@kevinhaeni](http://github.com/kevinhaeni)",
+        "current_state": "unscheduled",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/164635786",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 156419031,
+        "created_at": "2018-03-31T22:15:20Z",
+        "updated_at": "2019-03-26T14:24:38Z",
+        "estimate": 0,
+        "story_type": "feature",
+        "name": "cloudfoundry/python-buildpack #102: egg-links in site-packages point to invalid path a run-time [timebox: 4 hours]",
+        "description": "[Github Issue #102](https://github.com/cloudfoundry/python-buildpack/issues/102)\n\n>## What version of Cloud Foundry and CF CLI are you using? (i.e. What is the output of running `cf curl /v2/info && cf version`?\n>\n>{\n>   \"name\": \"\",\n>   \"build\": \"\",\n>   \"support\": \"https://support.run.pivotal.io\",\n>   \"version\": 0,\n>   \"description\": \"Cloud Foundry sponsored by Pivotal\",\n>   \"authorization_endpoint\": \"https://login.run.pivotal.io\",\n>   \"token_endpoint\": \"https://uaa.run.pivotal.io\",\n>   ...(message has been trimmed)\n\nFiled by [@punkadiddle](http://github.com/punkadiddle)\n\n---\n\n**Deliverables**\n- Investigate possible ways to guarantee that egg links don't contain the staging path (`/tmp/app`) during launch.\n- Leave results of investigation in a comment.\n\n**Notes**\n- If our v3 will fix this then we will just do that and can leave issue open. (Can reply with v3 is the answer)",
+        "current_state": "unscheduled",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/156419031",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 21093626,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "pip-cnb",
+            "created_at": "2019-03-11T18:30:02Z",
+            "updated_at": "2019-03-11T18:30:02Z"
+          },
+          {
+            "id": 8434708,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "python",
+            "created_at": "2014-05-13T21:42:12Z",
+            "updated_at": "2014-05-13T21:42:12Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 150361099,
+        "created_at": "2017-08-18T14:09:29Z",
+        "updated_at": "2019-02-09T19:09:46Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/php-buildpack #221: Php-buildpack extension supplied by extension buildpacks",
+        "description": "[Github Issue #221](https://github.com/cloudfoundry/php-buildpack/issues/221)\n\n>As part of [Multi buildpack design proposal discussion](https://docs.google.com/document/d/1QPdlJuPOwPkoeFIbaMZ8qPlEEeQNIlpJlDya-VL8VVU/edit?disco=AAAAA7Ol_Zc), @sclevine suggested to express php-builpack use-cases as github issues.\n>\n>In addition to be able to inject binaries and libraries in the path (as covered in [story  142852347](https://www.pivotaltracker.com/story/show/142852347), we would also like to \n>1- ...(message has been trimmed)\n\nFiled by [@gberche-orange](http://github.com/gberche-orange)",
+        "current_state": "unscheduled",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/150361099",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 18893579,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "dan",
+            "created_at": "2017-07-19T15:30:46Z",
+            "updated_at": "2017-07-19T15:30:46Z"
+          },
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 19951224,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "hold",
+            "created_at": "2018-04-13T01:48:55Z",
+            "updated_at": "2018-04-13T01:48:55Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          },
+          {
+            "id": 20376440,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "waiting-for-conversion-to-libbuildpack",
+            "created_at": "2018-08-14T16:22:54Z",
+            "updated_at": "2018-08-14T16:22:54Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 154655683,
+        "created_at": "2018-01-26T02:44:04Z",
+        "updated_at": "2019-02-09T19:09:46Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/php-buildpack #245: Version of PHP used should abide by composer's version constraint",
+        "description": "[Github Issue #245](https://github.com/cloudfoundry/php-buildpack/issues/245)\n\n>If you specify a PHP version in both `composer.json` and `.bp-config/options.json`, the buildpack will default to using the version defined in `composer.json`, but it doesn't take into account the version constraint.\n>\n>https://github.com/cloudfoundry/php-buildpack/blob/2b2fa0414be3ff0b4c593e54b7b130c340e00338/lib/php/extension.py#L125-L127\n>\n>So given the following configuration:\n>\n>.bp-config/options.json\n>`` ...(message has been trimmed)\n\nFiled by [@ikari7789](http://github.com/ikari7789)",
+        "current_state": "unscheduled",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/154655683",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 8434706,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "php",
+            "created_at": "2014-05-13T21:43:16Z",
+            "updated_at": "2014-05-13T21:43:16Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          },
+          {
+            "id": 20376440,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "waiting-for-conversion-to-libbuildpack",
+            "created_at": "2018-08-14T16:22:54Z",
+            "updated_at": "2018-08-14T16:22:54Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 155845467,
+        "created_at": "2018-03-09T06:14:28Z",
+        "updated_at": "2019-02-09T19:09:46Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/php-buildpack #255: Provide a FORCE_HTTPS option",
+        "description": "[Github Issue #255](https://github.com/cloudfoundry/php-buildpack/issues/255)\n\n>What version of Cloud Foundry and CF CLI are you using? (i.e. What is the output of running `cf curl /v2/info && cf version`?\n>capi 2.95.0\n>\n>What version of the buildpack you are using?\n>master\n>\n>If you were attempting to accomplish a task, what was it you were attempting to do?\n>Force redirect HTTP to HTTPS\n>\n>What did you expect to happen?\n>Ideally, a mechanism similar to the one provided by the ...(message has been trimmed)\n\nFiled by [@CAFxX](http://github.com/CAFxX)",
+        "current_state": "unscheduled",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/155845467",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 19951224,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "hold",
+            "created_at": "2018-04-13T01:48:55Z",
+            "updated_at": "2018-04-13T01:48:55Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          },
+          {
+            "id": 20376440,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "waiting-for-conversion-to-libbuildpack",
+            "created_at": "2018-08-14T16:22:54Z",
+            "updated_at": "2018-08-14T16:22:54Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 158494608,
+        "created_at": "2018-06-20T14:21:14Z",
+        "updated_at": "2019-02-09T19:09:46Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/php-buildpack #267: Load ini files from PHP_INI_SCAN_DIR during staging",
+        "description": "[Github Issue #267](https://github.com/cloudfoundry/php-buildpack/issues/267)\n\n>What version of Cloud Foundry and CF CLI are you using? (i.e. What is the output of running `cf curl /v2/info && cf version`?\n>N/A\n>\n>What version of the buildpack you are using?\n>4.3.56\n>\n>If you were attempting to accomplish a task, what was it you were attempting to do?\n>I'd like to use custom PHP ini files from `PHP_INI_SCAN_DIR` during staging. For this I added the file .bp-config/php/php.ini.d/test.ini ...(message has been trimmed)\n\nFiled by [@mjanser](http://github.com/mjanser)",
+        "current_state": "unscheduled",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/158494608",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 163063583,
+        "created_at": "2019-01-08T16:50:25Z",
+        "updated_at": "2019-02-09T19:09:46Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/php-buildpack #284: unit testing fails with ImportError on assert_raises_regexp",
+        "description": "[Github Issue #284](https://github.com/cloudfoundry/php-buildpack/issues/284)\n\n>What version of Cloud Foundry and CF CLI are you using? (i.e. What is the output of running `cf curl /v2/info && cf version`?\n>>> CF: 1.12.x\n>>> CLI :  6.34.1\n>\n>What version of the buildpack you are using?\n>>> 4.3.66\n>\n>If you were attempting to accomplish a task, what was it you were attempting to do?\n>>> perform unit test\n>\n>What did you expect to happen?\n>>> Unit test to succeed\n>\n>What was the ...(message has been trimmed)\n\nFiled by [@jitheshktv](http://github.com/jitheshktv)",
+        "current_state": "unscheduled",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/163063583",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 163831271,
+        "created_at": "2019-02-08T17:33:11Z",
+        "updated_at": "2019-02-26T20:21:14Z",
+        "story_type": "feature",
+        "name": "cloudfoundry/stack-auditor: Feature Request: Return the state of the application",
+        "description": "https://github.com/cloudfoundry/stack-auditor/issues/3",
+        "current_state": "unscheduled",
+        "requested_by_id": 3029159,
+        "url": "https://www.pivotaltracker.com/story/show/163831271",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 159549718,
+        "created_at": "2018-08-06T00:33:33Z",
+        "updated_at": "2019-02-09T19:09:46Z",
+        "story_type": "feature",
+        "name": "cloudfoundry/php-buildpack #275: Display extensions version in change log?",
+        "description": "[Github Issue #275](https://github.com/cloudfoundry/php-buildpack/issues/275)\n\n>What version of Cloud Foundry and CF CLI are you using? (i.e. What is the output of running `cf curl /v2/info && cf version`?\n>CF is 275 and CLI 6.37.0+a40009753.2018-05-25\n>\n>What version of the buildpack you are using?\n>4.3.57\n>\n>If you were attempting to accomplish a task, what was it you were attempting to do?\n>Reading the change log to check the provided extensions with their version\n>\n>What did you ...(message has been trimmed)\n\nFiled by [@respinoza](http://github.com/respinoza)",
+        "current_state": "unscheduled",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/159549718",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 8434706,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "php",
+            "created_at": "2014-05-13T21:43:16Z",
+            "updated_at": "2014-05-13T21:43:16Z"
+          },
+          {
+            "id": 19159387,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "ready",
+            "created_at": "2017-09-21T16:05:35Z",
+            "updated_at": "2017-09-21T16:05:35Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 158720707,
+        "created_at": "2018-06-29T09:35:29Z",
+        "updated_at": "2019-05-06T18:32:30Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/python-buildpack #114: Variable GUNICORN_CMD_ARGS set to '--access-logfile -' has precedence to command line args",
+        "description": "[Github Issue #114](https://github.com/cloudfoundry/python-buildpack/issues/114)\n\n># Summary\n> \n>> I am reporting this on behalf of one of our development teams. \n>\n>In https://github.com/cloudfoundry/python-buildpack/blob/8813afed0be323fc7670ac43aaaaf94528660bc1/src/python/supply/supply.go#L557 there is a default value for `GUNICORN_CMD_ARGS` set, with `export GUNICORN_CMD_ARGS=${GUNICORN_CMD_ARGS:-'--access-logfile -'}`.\n>\n>But this variable `GUNICORN_CMD_ARGS` which has the highest ...(message has been trimmed)\n\nFiled by [@keymon](http://github.com/keymon)",
+        "current_state": "unscheduled",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/158720707",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 163705746,
+        "created_at": "2019-02-04T18:10:11Z",
+        "updated_at": "2019-05-06T18:32:30Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/python-buildpack #129: Pre and post compile hooks aren't capturing stderr",
+        "description": "[Github Issue #129](https://github.com/cloudfoundry/python-buildpack/issues/129)\n\n>What version of the buildpack you are using?\n>v1.6.27\n>\n>If you were attempting to accomplish a task, what was it you were attempting to do?\n>Trying to debug an issue in a pre-compile script.\n>\n>What did you expect to happen?\n>Expected to see output from both stdout and stderr from the pre-compile script\n>\n>What was the actual behavior?\n>Only stdout output was capture by staging.\n>\n>The code running ...(message has been trimmed)\n\nFiled by [@amhuber](http://github.com/amhuber)",
+        "current_state": "unscheduled",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/163705746",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 13465066,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "needs pm",
+            "created_at": "2015-12-02T16:16:45Z",
+            "updated_at": "2015-12-02T16:16:45Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 165245318,
+        "created_at": "2019-04-10T12:55:41Z",
+        "updated_at": "2019-05-13T14:14:10Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/cflinuxfs3-release #5: cflinuxfs3-rootfs-setup pre-start is not idempotent",
+        "description": "[Github Issue #5](https://github.com/cloudfoundry/cflinuxfs3-release/issues/5)\n\n>Hi,\n>\n>we have just noticed that the `pre-start` script of the `cflinuxfs3-rootfs-setup` job is not idempotent. It can happen under certain circumstances that BOSH runs the script twice which leads to the following error:\n>```\n> CONF_DIR=/var/vcap/jobs/cflinuxfs3-rootfs-setup/config\n>+ ROOTFS_PACKAGE=/var/vcap/packages/cflinuxfs3\n>+ ROOTFS_DIR=/var/vcap/packages/cflinuxfs3/rootfs\n>+ ROOTFS_TAR=/var/vcap/packag ...(message has been trimmed)\n\nFiled by [@fhambrec](http://github.com/fhambrec)",
+        "current_state": "unscheduled",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/165245318",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 8675136,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "new-activity",
+            "created_at": "2014-06-12T22:53:23Z",
+            "updated_at": "2014-06-12T22:53:23Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 165410953,
+        "created_at": "2019-04-17T09:17:23Z",
+        "updated_at": "2019-05-01T15:18:09Z",
+        "story_type": "feature",
+        "name": "cloudfoundry/nodejs-buildpack #187: Yarn workspace not working when using nohoist",
+        "description": "[Github Issue #187](https://github.com/cloudfoundry/nodejs-buildpack/issues/187)\n\n>What version of Cloud Foundry and CF CLI are you using? (i.e. What is the output of running `cf curl /v2/info && cf version`?\n>```\n>{\n>   \"name\": \"\",\n>   \"build\": \"\",\n>   \"support\": \"https://support.run.pivotal.io\",\n>   \"version\": 0,\n>   \"description\": \"Cloud Foundry sponsored by Pivotal\",\n>   \"authorization_endpoint\": \"https://login.run.pivotal.io\",\n>   \"token_endpoint\": \"https://uaa.run.pivotal.io\",\n>   ...(message has been trimmed)\n\nFiled by [@beku8](http://github.com/beku8)\n\n**Notes**\n- As we move to the new node-cnb, let's add this feature to the yarn-cnb only",
+        "current_state": "unscheduled",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/165410953",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 165414189,
+        "created_at": "2019-04-17T12:34:38Z",
+        "updated_at": "2019-05-02T17:41:06Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/cflinuxfs3 #10: Provide graphviz + Dependencies",
+        "description": "[Github Issue #10](https://github.com/cloudfoundry/cflinuxfs3/issues/10)\n\n>Please consider adding the graphviz package plus its dependencies to the stack. https://packages.ubuntu.com/bionic/graphviz\n>\n>It would be nice to have it, so PlantUML can be executed in Cloud Foundry.\n>We´ve done this with cflinuxfs2, but cflinuxfs3 is missing several dependencies for graphwiz, so plantuml can not be used to its full potential.\n>\n>\n>\n\nFiled by [@escar42](http://github.com/escar42)",
+        "current_state": "unscheduled",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/165414189",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 158827507,
+        "created_at": "2018-07-04T20:41:04Z",
+        "updated_at": "2019-02-11T19:20:03Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/php-buildpack #272: Suppress download progress",
+        "description": "[Github Issue #272](https://github.com/cloudfoundry/php-buildpack/issues/272)\n\n>**What version of Cloud Foundry and CF CLI are you using?**\n>\n>2.114.0 and 6.37.0+a40009753.2018-05-25\n>\n>**What version of the buildpack you are using?**\n>\n>4.3.57\n>\n>**What did you expect to happen?**\n>\n>When running `cf push` no download stats without context should be displayed.\n>\n>**What was the actual behavior?**\n>\n>```\n>   Installing Nginx\n>   Downloaded [https://buildpacks.cloudfoundry.org/depe ...(message has been trimmed)\n\nFiled by [@ocean90](http://github.com/ocean90)",
+        "current_state": "unscheduled",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/158827507",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 13465066,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "needs pm",
+            "created_at": "2015-12-02T16:16:45Z",
+            "updated_at": "2015-12-02T16:16:45Z"
+          },
+          {
+            "id": 8434706,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "php",
+            "created_at": "2014-05-13T21:43:16Z",
+            "updated_at": "2014-05-13T21:43:16Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 158246149,
+        "created_at": "2018-06-11T06:18:59Z",
+        "updated_at": "2019-05-02T17:45:49Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/php-buildpack #265: Enable opcache by default",
+        "description": "[Github Issue #265](https://github.com/cloudfoundry/php-buildpack/issues/265)\n\n>Opcache can be used to decrease CPU usage at the expense of increased memory usage (up to 64mb by default), and it is normally recommended to run with opcache enabled for maximum performance. The default configuration of opcache is pretty conservative and it is unlikely to cause problems - especially in immutable applications.\n>\n>Unless there are significant concerns, would it be reasonable to enable opcache by ...(message has been trimmed)\n\nFiled by [@CAFxX](http://github.com/CAFxX)",
+        "current_state": "unscheduled",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/158246149",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 18893579,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "dan",
+            "created_at": "2017-07-19T15:30:46Z",
+            "updated_at": "2017-07-19T15:30:46Z"
+          },
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 165681345,
+        "created_at": "2019-04-29T14:25:11Z",
+        "updated_at": "2019-05-06T14:38:54Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/php-buildpack #302: NOTICE: End of support for Nginx versions 1.14.x after 2019-05-30",
+        "description": "[Github Issue #302](https://github.com/cloudfoundry/php-buildpack/issues/302)\n\n>The first release of the Php buildpack after May 30, 2019 will no longer include any versions of Nginx 1.14.x. Please migrate your Php apps to supported versions of Nginx before that time. \n>\n>Note: Unless you are manually specifying a version of Nginx for the buildpack to use, or you have customized your Php buildpack, no action is required.\n>\n\nFiled by [@shanks3012](http://github.com/shanks3012)",
+        "current_state": "unscheduled",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/165681345",
+        "project_id": 1042066,
+        "owner_ids": [
+          2099313
+        ],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          }
+        ],
+        "owned_by_id": 2099313
+      },
+      {
+        "kind": "story",
+        "id": 165681315,
+        "created_at": "2019-04-29T14:24:11Z",
+        "updated_at": "2019-05-06T14:39:09Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/nginx-buildpack #15: NOTICE: End of support for Nginx versions 1.14.x after 2019-05-30",
+        "description": "[Github Issue #15](https://github.com/cloudfoundry/nginx-buildpack/issues/15)\n\n>The first release of the Nginx buildpack after May 30, 2019 will no longer include any versions of Nginx 1.14.x. Please migrate your Nginx apps to supported versions of Nginx before that time. \n>\n>Note: Unless you are manually specifying a version of Nginx for the buildpack to use, or you have customized your Nginx buildpack, no action is required.\n>\n\nFiled by [@shanks3012](http://github.com/shanks3012)",
+        "current_state": "unscheduled",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/165681315",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          }
+        ]
+      },
+      {
+        "kind": "story",
+        "id": 165689741,
+        "created_at": "2019-04-29T16:36:41Z",
+        "updated_at": "2019-05-06T18:31:34Z",
+        "story_type": "bug",
+        "name": "cloudfoundry/php-buildpack #303: Outdated default php.ini",
+        "description": "[Github Issue #303](https://github.com/cloudfoundry/php-buildpack/issues/303)\n\n>The php.ini that comes with the buildpack is very outdated and sets configs which are very unexpected.\n>\n>If you compare the ini from PHP https://github.com/php/php-src/blob/PHP-7.3/php.ini-production to the one shipped with the buildpack https://github.com/cloudfoundry/php-buildpack/blob/master/defaults/config/php/7.3.x/php.ini you see that the buildpack still uses outdated values for some configs. For example it ...(message has been trimmed)\n\nFiled by [@Tobion](http://github.com/Tobion)",
+        "current_state": "unscheduled",
+        "requested_by_id": 1134058,
+        "url": "https://www.pivotaltracker.com/story/show/165689741",
+        "project_id": 1042066,
+        "owner_ids": [],
+        "labels": [
+          {
+            "id": 14779161,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "github-issue",
+            "created_at": "2016-05-06T06:13:41Z",
+            "updated_at": "2016-05-06T06:13:41Z"
+          },
+          {
+            "id": 17525829,
+            "project_id": 1042066,
+            "kind": "label",
+            "name": "triaged",
+            "created_at": "2017-01-30T15:27:14Z",
+            "updated_at": "2017-01-30T15:27:14Z"
+          }
+        ]
+      }
+    ],
+    "total_points": 1,
+    "total_points_completed": 0,
+    "total_hits": 45,
+    "total_hits_with_done": 45
+  },
+  "epics": {
+    "epics": [],
+    "total_hits": 0
+  },
+  "query": "label:github-issue AND -state:accepted -state:finished -state:delivered"
+}
