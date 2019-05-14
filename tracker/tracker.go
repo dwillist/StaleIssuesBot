@@ -2,7 +2,15 @@ package tracker
 
 import (
 	"encoding/json"
+	"fmt"
+	"time"
+
 	"github.com/dwillist/stale_issues/resources"
+)
+
+const (
+	Endpoint         = "https://www.pivotaltracker.com/services/v5/projects/1042066/search?query=label%3Agithub-issue%20AND%20-state%3Aaccepted%20-state%3Afinished%20-state%3Adelivered"
+	StaleAfterMonths = 1
 )
 
 type Tracker struct {
@@ -19,18 +27,52 @@ func NewTracker(caller Caller) Tracker {
 	}
 }
 
-func (t Tracker) FilterIssues() (resources.Search, error){
-	var result resources.Search
-	const endpoint = "https://www.pivotaltracker.com/services/v5/projects/1042066/search?query=label%3Agithub-issue%20AND%20-state%3Aaccepted%20-state%3Afinished%20-state%3Adelivered"
+func (t Tracker) Search() ([]resources.Story, error) {
+	var responseStruct resources.Search
+	var result []resources.Story
 
-	response, err := t.Caller.Call(endpoint)
+	response, err := t.Caller.Call(Endpoint)
 	if err != nil {
 		return result, err
 	}
 
-	if err := json.Unmarshal([]byte(response), &result); err != nil {
+	if err := json.Unmarshal([]byte(response), &responseStruct); err != nil {
 		return result, err
 	}
 
+	result = responseStruct.Stories.Stories
+
 	return result, nil
+}
+
+func (t Tracker) Filter() ([]resources.Story, error) {
+	var result []resources.Story
+
+	issues, err := t.Search()
+	if err != nil {
+		return result, err
+	}
+	result = filterIssues(issues)
+
+	return result, nil
+}
+
+func filterIssues(stories []resources.Story) []resources.Story {
+	var result []resources.Story
+
+	fmt.Println("total issues:", len(stories))
+
+	for _, story := range stories {
+		if isStale(story) {
+			result = append(result, story)
+		}
+	}
+
+	fmt.Println("Stale Issues:", len(result))
+
+	return result
+}
+
+func isStale(story resources.Story) bool {
+	return !story.UpdatedAt.AddDate(0, StaleAfterMonths, 0).After(time.Now())
 }

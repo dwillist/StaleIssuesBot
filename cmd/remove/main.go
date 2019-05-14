@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
-	"github.com/dwillist/stale_issues/tracker"
 	"log"
 	"os"
+
+	"github.com/dwillist/stale_issues/tracker"
 )
 
 func main() {
@@ -24,7 +25,7 @@ func run() error {
 
 	trackerInstance := tracker.NewTracker(caller)
 
-	staleIssues, err := trackerInstance.FilterIssues()
+	staleIssues, err := trackerInstance.Search()
 	if err != nil {
 		return err
 	}
