@@ -15,15 +15,21 @@ const (
 
 type Tracker struct {
 	Caller Caller
+	Timer  Timer
 }
 
 type Caller interface {
 	Call(endpoint string) (string, error)
 }
 
-func NewTracker(caller Caller) Tracker {
+type Timer interface {
+	Time() time.Time
+}
+
+func NewTracker(caller Caller, timer Timer) Tracker {
 	return Tracker{
 		Caller: caller,
+		Timer:  timer,
 	}
 }
 
@@ -52,18 +58,18 @@ func (t Tracker) Filter() ([]resources.Story, error) {
 	if err != nil {
 		return result, err
 	}
-	result = filterIssues(issues)
+	result = t.filterIssues(issues)
 
 	return result, nil
 }
 
-func filterIssues(stories []resources.Story) []resources.Story {
+func (t Tracker) filterIssues(stories []resources.Story) []resources.Story {
 	var result []resources.Story
 
 	fmt.Println("total issues:", len(stories))
 
 	for _, story := range stories {
-		if isStale(story) {
+		if t.isStale(story) {
 			result = append(result, story)
 		}
 	}
@@ -73,6 +79,6 @@ func filterIssues(stories []resources.Story) []resources.Story {
 	return result
 }
 
-func isStale(story resources.Story) bool {
-	return !story.UpdatedAt.AddDate(0, StaleAfterMonths, 0).After(time.Now())
+func (t Tracker) isStale(story resources.Story) bool {
+	return !story.UpdatedAt.AddDate(0, StaleAfterMonths, 0).After(t.Timer.Time())
 }

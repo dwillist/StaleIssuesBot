@@ -22,8 +22,9 @@ func exit(err error) {
 
 func run() error {
 	caller := tracker.Callout{}
+	timer := tracker.Time{}
 
-	trackerInstance := tracker.NewTracker(caller)
+	trackerInstance := tracker.NewTracker(caller, timer)
 
 	staleIssues, err := trackerInstance.Search()
 	if err != nil {

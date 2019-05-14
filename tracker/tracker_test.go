@@ -5,6 +5,7 @@ import (
 	"path"
 	"path/filepath"
 	"testing"
+	"time"
 
 	"github.com/dwillist/stale_issues/tracker"
 	"github.com/golang/mock/gomock"
@@ -13,7 +14,7 @@ import (
 	"github.com/sclevine/spec/report"
 )
 
-//go:generate mockgen -destination=mocks_test.go -package=tracker_test github.com/dwillist/stale_issues/tracker Caller
+//go:generate mockgen -destination=mocks_test.go -package=tracker_test github.com/dwillist/stale_issues/tracker Caller,Timer
 
 func TestUnitTracker(t *testing.T) {
 	spec.Run(t, "Tracker", testTracker, spec.Report(report.Terminal{}))
@@ -23,14 +24,28 @@ func testTracker(t *testing.T, when spec.G, it spec.S) {
 	var (
 		mockCtrl   *gomock.Controller
 		mockCaller *MockCaller
+		mockTimer  *MockTimer
 		subject    tracker.Tracker
+		response   string
+		err        error
 	)
 
 	it.Before(func() {
 		RegisterTestingT(t)
 		mockCtrl = gomock.NewController(t)
 		mockCaller = NewMockCaller(mockCtrl)
-		subject = tracker.NewTracker(mockCaller)
+		mockTimer = NewMockTimer(mockCtrl)
+
+		response, err = fileToString("tracker.json")
+		Expect(err).ToNot(HaveOccurred())
+
+		mockCaller.EXPECT().Call(tracker.Endpoint).Return(response, nil)
+
+		now := time.Date(
+			2019, 05, 14, 20, 34, 58, 651387237, time.UTC)
+		mockTimer.EXPECT().Time().Return(now).AnyTimes()
+
+		subject = tracker.NewTracker(mockCaller, mockTimer)
 	})
 
 	it.After(func() {
@@ -39,11 +54,6 @@ func testTracker(t *testing.T, when spec.G, it spec.S) {
 
 	when("Search()", func() {
 		it("returns all open unstarted github issues", func() {
-			response, err := fileToString("tracker.json")
-			Expect(err).ToNot(HaveOccurred())
-
-			mockCaller.EXPECT().Call(tracker.Endpoint).Return(response, nil)
-
 			result, err := subject.Search()
 			Expect(err).ToNot(HaveOccurred())
 
@@ -54,11 +64,6 @@ func testTracker(t *testing.T, when spec.G, it spec.S) {
 
 	when("FilterIsues()", func() {
 		it("returns all stale Github issues", func() {
-			response, err := fileToString("tracker.json")
-			Expect(err).ToNot(HaveOccurred())
-
-			mockCaller.EXPECT().Call(tracker.Endpoint).Return(response, nil)
-
 			result, err := subject.Filter()
 			Expect(err).ToNot(HaveOccurred())
 

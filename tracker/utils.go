@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"time"
 )
 
 const ReponseError = "error calling %s, got status code %d"
@@ -29,4 +30,11 @@ func (c Callout) Call(endpoint string) (string, error) {
 	}
 
 	return string(buf), nil
+}
+
+type Time struct {
+}
+
+func (t Time) Time() time.Time {
+	return time.Now()
 }
