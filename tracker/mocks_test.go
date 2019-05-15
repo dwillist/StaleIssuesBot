@@ -33,17 +33,30 @@ func (m *MockCaller) EXPECT() *MockCallerMockRecorder {
 	return m.recorder
 }
 
-// Call mocks base method
-func (m *MockCaller) Call(arg0 string) (string, error) {
-	ret := m.ctrl.Call(m, "Call", arg0)
+// Get mocks base method
+func (m *MockCaller) Get(arg0 string) (string, error) {
+	ret := m.ctrl.Call(m, "Get", arg0)
 	ret0, _ := ret[0].(string)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
 
-// Call indicates an expected call of Call
-func (mr *MockCallerMockRecorder) Call(arg0 interface{}) *gomock.Call {
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Call", reflect.TypeOf((*MockCaller)(nil).Call), arg0)
+// Get indicates an expected call of Get
+func (mr *MockCallerMockRecorder) Get(arg0 interface{}) *gomock.Call {
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Get", reflect.TypeOf((*MockCaller)(nil).Get), arg0)
+}
+
+// Post mocks base method
+func (m *MockCaller) Post(arg0, arg1 string) (string, error) {
+	ret := m.ctrl.Call(m, "Post", arg0, arg1)
+	ret0, _ := ret[0].(string)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// Post indicates an expected call of Post
+func (mr *MockCallerMockRecorder) Post(arg0, arg1 interface{}) *gomock.Call {
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Post", reflect.TypeOf((*MockCaller)(nil).Post), arg0, arg1)
 }
 
 // MockTimer is a mock of Timer interface

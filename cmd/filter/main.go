@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
 	"log"
 	"os"
@@ -27,13 +26,17 @@ func run() error {
 
 	trackerInstance := tracker.NewTracker(caller, timer)
 
-	issues, err := trackerInstance.Filter()
+	//issues, err := trackerInstance.Filter()
+	//if err != nil {
+	//	return err
+	//}
+
+	labels, err := trackerInstance.PostLabel()
 	if err != nil {
 		return err
 	}
 
-	jsonString, err := json.Marshal(issues)
-	fmt.Println(string(jsonString))
+	fmt.Println(labels)
 
 	return nil
 }

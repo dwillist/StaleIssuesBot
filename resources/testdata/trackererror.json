@@ -1,0 +1,12 @@
+{
+  "code": "invalid_parameter",
+  "kind": "error",
+  "error": "One or more request parameters was missing or invalid.",
+  "general_problem": "A label with that name already exists for this project.",
+  "validation_errors": [
+    {
+      "field": "name",
+      "problem": "A label with that name already exists for this project."
+    }
+  ]
+}

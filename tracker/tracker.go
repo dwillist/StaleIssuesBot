@@ -9,7 +9,9 @@ import (
 )
 
 const (
-	Endpoint         = "https://www.pivotaltracker.com/services/v5/projects/1042066/search?query=label%3Agithub-issue%20AND%20-state%3Aaccepted%20-state%3Afinished%20-state%3Adelivered"
+	ProjectID        = "1042066"
+	SearchEndpoint   = "https://www.pivotaltracker.com/services/v5/projects/" + ProjectID + "/search?query=label%3Agithub-issue%20AND%20-state%3Aaccepted%20-state%3Afinished%20-state%3Adelivered"
+	LabelsEndpoint   = "https://www.pivotaltracker.com/services/v5/projects/" + ProjectID + "/labels"
 	StaleAfterMonths = 1
 )
 
@@ -19,7 +21,8 @@ type Tracker struct {
 }
 
 type Caller interface {
-	Call(endpoint string) (string, error)
+	Get(endpoint string) (string, error)
+	Post(endpoint string, data string) ([]byte, error)
 }
 
 type Timer interface {
@@ -37,7 +40,7 @@ func (t Tracker) Search() ([]resources.Story, error) {
 	var responseStruct resources.Search
 	var result []resources.Story
 
-	response, err := t.Caller.Call(Endpoint)
+	response, err := t.Caller.Get(SearchEndpoint)
 	if err != nil {
 		return result, err
 	}
@@ -81,4 +84,17 @@ func (t Tracker) filterIssues(stories []resources.Story) []resources.Story {
 
 func (t Tracker) isStale(story resources.Story) bool {
 	return !story.UpdatedAt.AddDate(0, StaleAfterMonths, 0).After(t.Timer.Time())
+}
+
+func (t Tracker) PostLabel() ([]byte, error) {
+	return := t.Caller.Post("blah", "blah")
+	return []byte{}, nil
+}
+
+func (t Tracker) initializeStaleLabel() (bool, error) {
+	return false, nil
+}
+
+func tagAsStale(story resources.Story) bool {
+	return false
 }

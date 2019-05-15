@@ -12,7 +12,7 @@ const ReponseError = "error calling %s, got status code %d"
 type Callout struct {
 }
 
-func (c Callout) Call(endpoint string) (string, error) {
+func (c Callout) Get(endpoint string) (string, error) {
 	resp, err := http.Get(endpoint)
 	if err != nil {
 		return "", err
@@ -30,6 +30,10 @@ func (c Callout) Call(endpoint string) (string, error) {
 	}
 
 	return string(buf), nil
+}
+
+func (c Callout) Post(endpoint, data string) (string, error) {
+	return "", nil
 }
 
 type Time struct {
