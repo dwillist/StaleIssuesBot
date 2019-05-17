@@ -3,7 +3,6 @@ package tracker_test
 import (
 	"encoding/json"
 	"io/ioutil"
-	"path"
 	"path/filepath"
 	"testing"
 	"time"
@@ -29,7 +28,7 @@ func testTracker(t *testing.T, when spec.G, it spec.S) {
 		mockCaller *MockCaller
 		mockTimer  *MockTimer
 		subject    tracker.Tracker
-		response   string
+		response   []byte
 		err        error
 	)
 
@@ -39,7 +38,7 @@ func testTracker(t *testing.T, when spec.G, it spec.S) {
 		mockCaller = NewMockCaller(mockCtrl)
 		mockTimer = NewMockTimer(mockCtrl)
 
-		response, err = fileToString("tracker.json")
+		response, err = fileBytes("tracker.json")
 		Expect(err).ToNot(HaveOccurred())
 
 		now := time.Date(
@@ -79,15 +78,14 @@ func testTracker(t *testing.T, when spec.G, it spec.S) {
 
 	when("Initializing 'Stale' label", func() {
 		it.Focus("doesn't create a label if one exists", func() {
-			response, err := fileToString("trackererror.json")
+			response, err := fileBytes("trackererror.json")
 			Expect(err).NotTo(HaveOccurred())
 
-			labelStruct := resources.Label{Name: "a new hope"}
+			labelStruct := resources.Label{Name: tracker.StaleLabel}
 			labelJSON, err := json.Marshal(labelStruct)
 			Expect(err).NotTo(HaveOccurred())
 
 			mockCaller.EXPECT().Post(tracker.LabelsEndpoint, string(labelJSON)).Return(response, nil)
-
 			_, err = subject.PostLabel()
 			Expect(err).NotTo(HaveOccurred())
 		})
@@ -95,16 +93,16 @@ func testTracker(t *testing.T, when spec.G, it spec.S) {
 
 }
 
-func fileToString(fileName string) (string, error) {
-	path, err := filepath.Abs(path.Join("..", "resources", "testdata", fileName))
+func fileBytes(fileName string) ([]byte, error) {
+	path, err := filepath.Abs(filepath.Join("..", "resources", "testdata", fileName))
 	if err != nil {
-		return "", err
+		return []byte{}, err
 	}
 
 	buf, err := ioutil.ReadFile(path)
 	if err != nil {
-		return "", err
+		return []byte{}, err
 	}
 
-	return string(buf), nil
+	return buf, nil
 }

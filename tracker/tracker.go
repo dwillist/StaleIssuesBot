@@ -13,6 +13,7 @@ const (
 	SearchEndpoint   = "https://www.pivotaltracker.com/services/v5/projects/" + ProjectID + "/search?query=label%3Agithub-issue%20AND%20-state%3Aaccepted%20-state%3Afinished%20-state%3Adelivered"
 	LabelsEndpoint   = "https://www.pivotaltracker.com/services/v5/projects/" + ProjectID + "/labels"
 	StaleAfterMonths = 1
+	StaleLabel       = "stale-issue"
 )
 
 type Tracker struct {
@@ -21,7 +22,7 @@ type Tracker struct {
 }
 
 type Caller interface {
-	Get(endpoint string) (string, error)
+	Get(endpoint string) ([]byte, error)
 	Post(endpoint string, data string) ([]byte, error)
 }
 
@@ -87,8 +88,12 @@ func (t Tracker) isStale(story resources.Story) bool {
 }
 
 func (t Tracker) PostLabel() ([]byte, error) {
-	return := t.Caller.Post("blah", "blah")
-	return []byte{}, nil
+	newLabel := resources.Label{Name: StaleLabel}
+	labelBytes, err := json.Marshal(newLabel)
+	if err != nil {
+		return []byte{}, err
+	}
+	return t.Caller.Post(LabelsEndpoint, string(labelBytes))
 }
 
 func (t Tracker) initializeStaleLabel() (bool, error) {
