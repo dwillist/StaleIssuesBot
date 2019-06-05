@@ -78,16 +78,24 @@ func testTracker(t *testing.T, when spec.G, it spec.S) {
 
 	when("Initializing 'Stale' label", func() {
 		it.Focus("doesn't create a label if one exists", func() {
-			response, err := fileBytes("trackererror.json")
+			errorResponse, err := fileBytes("trackererror.json")
 			Expect(err).NotTo(HaveOccurred())
+
+			labelResponse, err := fileBytes("labels.json")
 
 			labelStruct := resources.Label{Name: tracker.StaleLabel}
 			labelJSON, err := json.Marshal(labelStruct)
 			Expect(err).NotTo(HaveOccurred())
 
-			mockCaller.EXPECT().Post(tracker.LabelsEndpoint, string(labelJSON)).Return(response, nil)
-			_, err = subject.PostLabel()
+			mockCaller.EXPECT().Post(tracker.LabelsEndpoint, labelJSON).Return(errorResponse, nil)
+			mockCaller.EXPECT().Get(tracker.LabelsEndpoint).Return(labelResponse, nil)
+			label, success, err := subject.PostLabel()
 			Expect(err).NotTo(HaveOccurred())
+			Expect(success).To(BeFalse())
+			Expect(label.Name).To(Equal("stale-issue"))
+		})
+		it("Creates the label if it does not exist", func() {
+
 		})
 	})
 

@@ -47,7 +47,7 @@ func (mr *MockCallerMockRecorder) Get(arg0 interface{}) *gomock.Call {
 }
 
 // Post mocks base method
-func (m *MockCaller) Post(arg0, arg1 string) ([]byte, error) {
+func (m *MockCaller) Post(arg0 string, arg1 []byte) ([]byte, error) {
 	ret := m.ctrl.Call(m, "Post", arg0, arg1)
 	ret0, _ := ret[0].([]byte)
 	ret1, _ := ret[1].(error)
