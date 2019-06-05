@@ -1,7 +1,5 @@
 package resources
 
-import "time"
-
 type Labels []Label
 
 type Label struct {
@@ -9,6 +7,6 @@ type Label struct {
 	ID        int       `json:"id,omitempty"`
 	ProjectID int       `json:"project_id,omitempty"`
 	Name      string    `json:"name"`
-	CreatedAt time.Time `json:"created_at,omitempty"`
-	UpdatedAt time.Time `json:"updated_at,omitempty"`
+	CreatedAt string `json:"created_at,omitempty"`
+	UpdatedAt string `json:"updated_at,omitempty"`
 }

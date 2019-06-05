@@ -31,7 +31,7 @@ func run() error {
 	//	return err
 	//}
 
-	labels, err := trackerInstance.PostLabel()
+	labels, _, err := trackerInstance.PostLabel()
 	if err != nil {
 		return err
 	}

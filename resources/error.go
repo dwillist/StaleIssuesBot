@@ -10,3 +10,7 @@ type TrackerError struct {
 		Problem string `json:"problem"`
 	} `json:"validation_errors"`
 }
+
+func (t *TrackerError) Validate() bool {
+	return t.Code != ""
+}

@@ -34,7 +34,7 @@ func (c Callout) Get(endpoint string) ([]byte, error) {
 	return buf, nil
 }
 
-func (c Callout) Post(endpoint, data string) ([]byte, error) {
+func (c Callout) Post(endpoint string, data []byte) ([]byte, error) {
 	client := &http.Client{}
 
 	trackerToken := os.Getenv("TRACKER_TOKEN")

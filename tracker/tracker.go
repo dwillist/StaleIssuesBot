@@ -88,11 +88,7 @@ func (t Tracker) isStale(story resources.Story) bool {
 	return !story.UpdatedAt.AddDate(0, StaleAfterMonths, 0).After(t.Timer.Time())
 }
 
-// What do we want this to do ????
-// Post a label successfully or
-
-// should probably return the label object at some point here
-// both cases should give us such
+// TODO: refactor this
 func (t Tracker) PostLabel() (resources.Label, bool, error) {
 	newLabel := resources.Label{Name: StaleLabel}
 	labelBytes, err := json.Marshal(newLabel)
@@ -105,8 +101,8 @@ func (t Tracker) PostLabel() (resources.Label, bool, error) {
 	}
 
 	var errorResponse resources.TrackerError
-	if err := json.Unmarshal(postResponse, &errorResponse); err == nil {
-		// need to do some work in here...
+	if err := json.Unmarshal(postResponse, &errorResponse); err == nil && errorResponse.Validate() {
+		fmt.Printf("Successful parsing :( %+v\n",  errorResponse)
 		label, err := t.getLabelFromName(StaleLabel)
 		if err != nil {
 			return resources.Label{}, false, err

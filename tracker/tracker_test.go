@@ -77,7 +77,7 @@ func testTracker(t *testing.T, when spec.G, it spec.S) {
 	})
 
 	when("Initializing 'Stale' label", func() {
-		it.Focus("doesn't create a label if one exists", func() {
+		it("doesn't create a label if one exists", func() {
 			errorResponse, err := fileBytes("trackererror.json")
 			Expect(err).NotTo(HaveOccurred())
 
@@ -95,11 +95,31 @@ func testTracker(t *testing.T, when spec.G, it spec.S) {
 			Expect(label.Name).To(Equal("stale-issue"))
 		})
 		it("Creates the label if it does not exist", func() {
+			labelResponse, err := fileBytes("new_label.json")
+			Expect(err).NotTo(HaveOccurred())
 
+			labelStruct := resources.Label{Name: tracker.StaleLabel}
+			labelJSON, err := json.Marshal(labelStruct)
+			Expect(err).NotTo(HaveOccurred())
+
+			mockCaller.EXPECT().Post(tracker.LabelsEndpoint, labelJSON).Return(labelResponse, nil)
+			label, success, err := subject.PostLabel()
+			Expect(err).NotTo(HaveOccurred())
+			Expect(success).To(BeTrue())
+			Expect(label.Name).To(Equal("stale-issue"))
 		})
 	})
 
 }
+
+// Status
+// 1. we can collect
+// 2. we can filter issues on staleness
+// 3. we can create a tag and handle error if it does not exist
+
+// TODO
+// Apply the tag to an issue 
+
 
 func fileBytes(fileName string) ([]byte, error) {
 	path, err := filepath.Abs(filepath.Join("..", "resources", "testdata", fileName))
