@@ -108,6 +108,35 @@ func testTracker(t *testing.T, when spec.G, it spec.S) {
 			Expect(success).To(BeTrue())
 			Expect(label.Name).To(Equal("stale-issue"))
 		})
+
+		it("Applies stale-issue tag to old issues", func() {
+			label := resources.Label{
+				Name: tracker.StaleLabel,
+				ID: 1234567890,
+			}
+
+			issue := resources.Story{
+				Name: "some-story-name",
+				Labels: []resources.Label {
+					resources.Label {
+						Name: "pre-existing-label1",
+						ID:   2345678901,
+					},
+					resources.Label{
+						Name: "pre-existing-label2",
+						ID:   3456789012,
+					},
+				},
+			}
+
+			issueData,err := json.Marshal(issue)
+			Expect(err).ToNot(HaveOccurred())
+
+			storyUrl := filepath.Join(tracker.ProjectEndpoint,string(label.ProjectID))
+			mockCaller.EXPECT().Post(storyUrl, issueData).Return{
+					
+			}
+		})
 	})
 
 }

@@ -16,14 +16,7 @@ type Story struct {
 	URL           string        `json:"url"`
 	ProjectID     int           `json:"project_id"`
 	OwnerIds      []interface{} `json:"owner_ids"`
-	Labels        []struct {
-		ID        int       `json:"id"`
-		ProjectID int       `json:"project_id"`
-		Kind      string    `json:"kind"`
-		Name      string    `json:"name"`
-		CreatedAt time.Time `json:"created_at"`
-		UpdatedAt time.Time `json:"updated_at"`
-	} `json:"labels"`
+	Labels        []Label `json:"labels"`
 	OwnedByID int `json:"owned_by_id,omitempty"`
 }
 

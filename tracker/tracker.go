@@ -11,8 +11,10 @@ import (
 
 const (
 	ProjectID        = "1042066"
-	SearchEndpoint   = "https://www.pivotaltracker.com/services/v5/projects/" + ProjectID + "/search?query=label%3Agithub-issue%20AND%20-state%3Aaccepted%20-state%3Afinished%20-state%3Adelivered"
-	LabelsEndpoint   = "https://www.pivotaltracker.com/services/v5/projects/" + ProjectID + "/labels"
+	ProjectEndpoint  = "https://www.pivotaltracker.com/services/v5/projects/" + ProjectID
+	SearchEndpoint   = ProjectEndpoint + "/search?query=label%3Agithub-issue%20AND%20-state%3Aaccepted%20-state%3Afinished%20-state%3Adelivered"
+	LabelsEndpoint   = ProjectEndpoint + "/labels"
+	StoriesEndpoint  = ProjectEndpoint + "/stories"
 	StaleAfterMonths = 1
 	StaleLabel       = "stale-issue"
 )
