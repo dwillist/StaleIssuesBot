@@ -121,6 +121,11 @@ func (t Tracker) PostLabel() (resources.Label, bool, error) {
 	return resources.Label{}, false, errors.New("unable to parse response as error or valid response")
 }
 
+
+func (t Tracker) UpdateLabel() (resources.Story, bool, error) {
+	// Returns updated story if
+}
+
 func (t Tracker) getLabelFromName(name string) (resources.Label, error) {
 	labelsResponse, err := t.Caller.Get(LabelsEndpoint)
 	if err != nil {

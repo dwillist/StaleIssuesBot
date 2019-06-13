@@ -110,33 +110,49 @@ func testTracker(t *testing.T, when spec.G, it spec.S) {
 		})
 
 		it("Applies stale-issue tag to old issues", func() {
-			label := resources.Label{
+			postUpdateResponse,err := fileBytes("post_update_story.json")
+			Expect(err).NotTo(HaveOccurred())
+
+			preUpdateData, err := fileBytes("pre_update_story.json")
+			Expect(err).NotTo(HaveOccurred())
+
+			var preUpdateLabel resources.Story
+
+			Expect(json.Unmarshal(preUpdateData, &preUpdateLabel)).To(Succeed())
+
+			newLabel := resources.Label{
 				Name: tracker.StaleLabel,
 				ID: 1234567890,
 			}
 
-			issue := resources.Story{
-				Name: "some-story-name",
-				Labels: []resources.Label {
-					resources.Label {
-						Name: "pre-existing-label1",
-						ID:   2345678901,
-					},
-					resources.Label{
-						Name: "pre-existing-label2",
-						ID:   3456789012,
-					},
-				},
-			}
-
-			issueData,err := json.Marshal(issue)
+			newLabelData,err := json.Marshal(newLabel)
 			Expect(err).ToNot(HaveOccurred())
 
-			storyUrl := filepath.Join(tracker.ProjectEndpoint,string(label.ProjectID))
-			mockCaller.EXPECT().Post(storyUrl, issueData).Return{
-					
-			}
+			storyUrl := filepath.Join(tracker.StoriesEndpoint)
+			// what is the data we are posting
+			mockCaller.EXPECT().Post(storyUrl, newLabelData).Return(postUpdateResponse, nil)
+			updateLabel, success, err := subject.UpdateLabel()
+
+			Expect(err).NotTo(HaveOccurred())
+			Expect(success).To(BeTrue())
 		})
+
+		it("fails to re-apply the stale issues tag", func() {
+			startData,err := fileBytes("post_update_story.json")
+			Expect(err).NotTo(HaveOccurred())
+
+			var startStory resources.Story
+			Expect(json.Unmarshal(startData, &startStory)).To(Succeed())
+
+			// what is the data we are posting
+			updatedStory, success, err := subject.UpdateLabel()
+
+			Expect(err).NotTo(HaveOccurred())
+			Expect(success).To(BeFalse())
+			Expect(updatedStory).To(Equal(startStory))
+
+		})
+
 	})
 
 }
