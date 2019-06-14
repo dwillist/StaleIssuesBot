@@ -104,7 +104,7 @@ func (t Tracker) PostLabel() (resources.Label, bool, error) {
 
 	var errorResponse resources.TrackerError
 	if err := json.Unmarshal(postResponse, &errorResponse); err == nil && errorResponse.Validate() {
-		fmt.Printf("Successful parsing :( %+v\n",  errorResponse)
+		fmt.Printf("Successful parsing :( %+v\n", errorResponse)
 		label, err := t.getLabelFromName(StaleLabel)
 		if err != nil {
 			return resources.Label{}, false, err
@@ -121,9 +121,31 @@ func (t Tracker) PostLabel() (resources.Label, bool, error) {
 	return resources.Label{}, false, errors.New("unable to parse response as error or valid response")
 }
 
+func (t Tracker) UpdateStory(story resources.Story) (resources.Story, bool, error) {
+	sLabel := resources.Label{
+		Name: StaleLabel,
+	}
+	if hasLabel(story, sLabel) {
+		return story, false, nil
+	}
 
-func (t Tracker) UpdateLabel() (resources.Story, bool, error) {
-	// Returns updated story if
+	labelData, err := json.Marshal(sLabel)
+	if err != nil {
+		return resources.Story{}, false, err
+	}
+
+	resp, err := t.Caller.Post(StoriesEndpoint, labelData)
+	if err != nil {
+		return resources.Story{}, false, err
+	}
+
+	var respStory resources.Story
+
+	if err := json.Unmarshal(resp, &respStory); err != nil {
+		return respStory, false, err
+	}
+
+	return respStory, true, nil
 }
 
 func (t Tracker) getLabelFromName(name string) (resources.Label, error) {
@@ -151,5 +173,14 @@ func (t Tracker) initializeStaleLabel() (bool, error) {
 }
 
 func tagAsStale(story resources.Story) bool {
+	return false
+}
+
+func hasLabel(story resources.Story, label resources.Label) bool {
+	for _, storyLabel := range story.Labels {
+		if storyLabel.Name == label.Name { // label names are unique
+			return true
+		}
+	}
 	return false
 }

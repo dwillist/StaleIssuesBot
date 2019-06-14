@@ -38,7 +38,7 @@ func testTracker(t *testing.T, when spec.G, it spec.S) {
 		mockCaller = NewMockCaller(mockCtrl)
 		mockTimer = NewMockTimer(mockCtrl)
 
-		response, err = fileBytes("tracker.json")
+		response, err = FileBytes("tracker.json")
 		Expect(err).ToNot(HaveOccurred())
 
 		now := time.Date(
@@ -78,10 +78,10 @@ func testTracker(t *testing.T, when spec.G, it spec.S) {
 
 	when("Initializing 'Stale' label", func() {
 		it("doesn't create a label if one exists", func() {
-			errorResponse, err := fileBytes("trackererror.json")
+			errorResponse, err := FileBytes("trackererror.json")
 			Expect(err).NotTo(HaveOccurred())
 
-			labelResponse, err := fileBytes("labels.json")
+			labelResponse, err := FileBytes("labels.json")
 
 			labelStruct := resources.Label{Name: tracker.StaleLabel}
 			labelJSON, err := json.Marshal(labelStruct)
@@ -95,7 +95,7 @@ func testTracker(t *testing.T, when spec.G, it spec.S) {
 			Expect(label.Name).To(Equal("stale-issue"))
 		})
 		it("Creates the label if it does not exist", func() {
-			labelResponse, err := fileBytes("new_label.json")
+			labelResponse, err := FileBytes("new_label.json")
 			Expect(err).NotTo(HaveOccurred())
 
 			labelStruct := resources.Label{Name: tracker.StaleLabel}
@@ -109,43 +109,42 @@ func testTracker(t *testing.T, when spec.G, it spec.S) {
 			Expect(label.Name).To(Equal("stale-issue"))
 		})
 
-		it("Applies stale-issue tag to old issues", func() {
-			postUpdateResponse,err := fileBytes("post_update_story.json")
+		it("applies stale-issue tag to old issues", func() {
+			postUpdateResponse, err := FileBytes("post_update_story.json")
 			Expect(err).NotTo(HaveOccurred())
 
-			preUpdateData, err := fileBytes("pre_update_story.json")
+			preUpdateData, err := FileBytes("pre_update_story.json")
 			Expect(err).NotTo(HaveOccurred())
 
-			var preUpdateLabel resources.Story
+			var preUpdateStory resources.Story
 
-			Expect(json.Unmarshal(preUpdateData, &preUpdateLabel)).To(Succeed())
+			Expect(json.Unmarshal(preUpdateData, &preUpdateStory)).To(Succeed())
 
-			newLabel := resources.Label{
+			staleLabel := resources.Label{
 				Name: tracker.StaleLabel,
-				ID: 1234567890,
 			}
 
-			newLabelData,err := json.Marshal(newLabel)
+			newLabelData, err := json.Marshal(staleLabel)
 			Expect(err).ToNot(HaveOccurred())
 
-			storyUrl := filepath.Join(tracker.StoriesEndpoint)
 			// what is the data we are posting
-			mockCaller.EXPECT().Post(storyUrl, newLabelData).Return(postUpdateResponse, nil)
-			updateLabel, success, err := subject.UpdateLabel()
+			mockCaller.EXPECT().Post(tracker.StoriesEndpoint, newLabelData).Return(postUpdateResponse, nil)
+			updatedStory, success, err := subject.UpdateStory(preUpdateStory)
 
 			Expect(err).NotTo(HaveOccurred())
 			Expect(success).To(BeTrue())
+			Expect(updatedStory.Labels[1].Name).To(Equal(tracker.StaleLabel))
 		})
 
 		it("fails to re-apply the stale issues tag", func() {
-			startData,err := fileBytes("post_update_story.json")
+			startData, err := FileBytes("post_update_story.json")
 			Expect(err).NotTo(HaveOccurred())
 
 			var startStory resources.Story
 			Expect(json.Unmarshal(startData, &startStory)).To(Succeed())
 
 			// what is the data we are posting
-			updatedStory, success, err := subject.UpdateLabel()
+			updatedStory, success, err := subject.UpdateStory(startStory)
 
 			Expect(err).NotTo(HaveOccurred())
 			Expect(success).To(BeFalse())
@@ -157,16 +156,10 @@ func testTracker(t *testing.T, when spec.G, it spec.S) {
 
 }
 
-// Status
-// 1. we can collect
-// 2. we can filter issues on staleness
-// 3. we can create a tag and handle error if it does not exist
-
 // TODO
-// Apply the tag to an issue 
+// Apply the tag to an issue
 
-
-func fileBytes(fileName string) ([]byte, error) {
+func FileBytes(fileName string) ([]byte, error) {
 	path, err := filepath.Abs(filepath.Join("..", "resources", "testdata", fileName))
 	if err != nil {
 		return []byte{}, err
