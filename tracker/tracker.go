@@ -19,9 +19,16 @@ const (
 	StaleLabel       = "stale-issue"
 )
 
-type Tracker struct {
-	Caller Caller
-	Timer  Timer
+type Project struct {
+	tracker   TrackerAPI
+	ProjectID string
+	StaleAfterMonths int
+
+}
+
+type TrackerAPI struct {
+	Caller    Caller
+	Timer     Timer
 }
 
 type Caller interface {
@@ -33,14 +40,14 @@ type Timer interface {
 	Time() time.Time
 }
 
-func NewTracker(caller Caller, timer Timer) Tracker {
-	return Tracker{
+func NewTracker(caller Caller, timer Timer) TrackerAPI {
+	return TrackerAPI{
 		Caller: caller,
 		Timer:  timer,
 	}
 }
 
-func (t Tracker) Search() ([]resources.Story, error) {
+func (t TrackerAPI) Search() ([]resources.Story, error) {
 	var responseStruct resources.Search
 	var result []resources.Story
 
@@ -58,7 +65,7 @@ func (t Tracker) Search() ([]resources.Story, error) {
 	return result, nil
 }
 
-func (t Tracker) Filter() ([]resources.Story, error) {
+func (t TrackerAPI) Filter() ([]resources.Story, error) {
 	var result []resources.Story
 
 	issues, err := t.Search()
@@ -70,7 +77,7 @@ func (t Tracker) Filter() ([]resources.Story, error) {
 	return result, nil
 }
 
-func (t Tracker) filterIssues(stories []resources.Story) []resources.Story {
+func (t TrackerAPI) filterIssues(stories []resources.Story) []resources.Story {
 	var result []resources.Story
 
 	fmt.Println("total issues:", len(stories))
@@ -86,12 +93,12 @@ func (t Tracker) filterIssues(stories []resources.Story) []resources.Story {
 	return result
 }
 
-func (t Tracker) isStale(story resources.Story) bool {
+func (t TrackerAPI) isStale(story resources.Story) bool {
 	return !story.UpdatedAt.AddDate(0, StaleAfterMonths, 0).After(t.Timer.Time())
 }
 
 // TODO: refactor this
-func (t Tracker) PostLabel() (resources.Label, bool, error) {
+func (t TrackerAPI) PostLabel() (resources.Label, bool, error) {
 	newLabel := resources.Label{Name: StaleLabel}
 	labelBytes, err := json.Marshal(newLabel)
 	if err != nil {
@@ -121,7 +128,7 @@ func (t Tracker) PostLabel() (resources.Label, bool, error) {
 	return resources.Label{}, false, errors.New("unable to parse response as error or valid response")
 }
 
-func (t Tracker) UpdateStory(story resources.Story) (resources.Story, bool, error) {
+func (t TrackerAPI) UpdateStory(story resources.Story) (resources.Story, bool, error) {
 	sLabel := resources.Label{
 		Name: StaleLabel,
 	}
@@ -148,7 +155,7 @@ func (t Tracker) UpdateStory(story resources.Story) (resources.Story, bool, erro
 	return respStory, true, nil
 }
 
-func (t Tracker) getLabelFromName(name string) (resources.Label, error) {
+func (t TrackerAPI) getLabelFromName(name string) (resources.Label, error) {
 	labelsResponse, err := t.Caller.Get(LabelsEndpoint)
 	if err != nil {
 		return resources.Label{}, err
@@ -168,12 +175,8 @@ func (t Tracker) getLabelFromName(name string) (resources.Label, error) {
 	return resources.Label{}, errors.New(fmt.Sprintf("no labels found with name: %s", name))
 }
 
-func (t Tracker) initializeStaleLabel() (bool, error) {
+func (t TrackerAPI) initializeStaleLabel() (bool, error) {
 	return false, nil
-}
-
-func tagAsStale(story resources.Story) bool {
-	return false
 }
 
 func hasLabel(story resources.Story, label resources.Label) bool {

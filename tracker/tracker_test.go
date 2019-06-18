@@ -19,7 +19,7 @@ import (
 //go:generate mockgen -destination=mocks_test.go -package=tracker_test github.com/dwillist/stale_issues/tracker Caller,Timer
 
 func TestUnitTracker(t *testing.T) {
-	spec.Run(t, "Tracker", testTracker, spec.Report(report.Terminal{}))
+	spec.Run(t, "TrackerAPI", testTracker, spec.Report(report.Terminal{}))
 }
 
 func testTracker(t *testing.T, when spec.G, it spec.S) {
@@ -27,7 +27,7 @@ func testTracker(t *testing.T, when spec.G, it spec.S) {
 		mockCtrl   *gomock.Controller
 		mockCaller *MockCaller
 		mockTimer  *MockTimer
-		subject    tracker.Tracker
+		subject    tracker.TrackerAPI
 		response   []byte
 		err        error
 	)
